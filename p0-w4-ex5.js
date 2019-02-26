@@ -20,4 +20,4 @@ function ubahHuruf(kata) {
   console.log(ubahHuruf('javascript')); // kbwbtdsjqu
   console.log(ubahHuruf('keren')); // lfsfo
   console.log(ubahHuruf('semangat')); // tfnbohbu
-  console.log(ubahHuruf('woz')); // woa
+  console.log(ubahHuruf('woz')); // xpa
