@@ -5,16 +5,16 @@ function highestScore (students) {
       temp[keyObj] = {}
       temp[keyObj].name = students[i].name
       temp[keyObj].score = students[i].score
-        for(var j = 0; j < students.length; j++) {
-          if(i !== j) {
-            if(students[i].class === students[j].class && students[i].score < students[j].score) {
-              var keyObj = students[j].class
-              temp[keyObj] = {}
-              temp[keyObj].name = students[j].name
-              temp[keyObj].score = students[j].score
-            }
+      for(var j = 0; j < students.length; j++) {
+        if(i !== j) {
+          if(students[i].class === students[j].class && students[i].score < students[j].score) {
+            var keyObj = students[j].class
+            temp[keyObj] = {}
+            temp[keyObj].name = students[j].name
+            temp[keyObj].score = students[j].score
           }
         }
+      }
     }
     return temp
   }
