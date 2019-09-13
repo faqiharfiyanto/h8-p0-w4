@@ -1,24 +1,25 @@
 function changeMe(arr) {
-    var myObj = {}
-    for(var i = 0; i < arr.length; i++) {
-        myObj.firstName = arr[i][0]
-        myObj.lastName = arr[i][1]
-        myObj.gender = arr[i][2]
-        if(arr[i][4] === undefined) {
-            myObj.age = 'Invalid Birth Year'
+    var ngobyek={}
+    
+    if (arr.length==0) {
+        return '""'
+    }
+    for(var i=0; i<arr.length; i++) {
+        ngobyek.firstName=arr[i][0]
+        ngobyek.lastName=arr[i][1]
+        ngobyek.gender=arr[i][2]
+        if(arr.length==4) {
+            ngobyek.age=2019-arr[i][3]
+        } else {
+            ngobyek.age='Invalid Birth Year'
         }
-        else {
-
-            myObj.age = arr[i][3]
-        }
-        console.log(i+1 + '. ' + myObj.firstName + ' ' + myObj.lastName + ':')
-        console.log(myObj)
+        console.log(i+1+'.',arr[i][0],arr[i][1]+':')
+        console.log(ngobyek)
     }
   }
   
   // TEST CASES
-  changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]);
-  // 1. Christ Evans:
+  changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]); // 1. Christ Evans:
   // { firstName: 'Christ',
   //   lastName: 'Evans',
   //   gender: 'Male',

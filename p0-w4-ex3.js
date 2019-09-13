@@ -1,15 +1,12 @@
 function cariMedian(arr) {
-    var medianAwal = 0
-    var penampung = 0
-    if((arr.length - 1) % 2 === 0) {
-        penampung = (arr.length - 1) / 2
-        medianAwal = arr[penampung]
+    var len=arr.length
+    var lenGanjil=arr[(len-1)/2]
+    var lenGenap=(arr[len/2]+arr[(len/2)-1])/2
+    if(len%2!=0) {
+        return lenGanjil
+    } else {
+        return lenGenap
     }
-    else {
-        penampung = Math.floor((arr.length - 1) / 2)
-        medianAwal = (arr[penampung] + arr[penampung + 1]) / 2
-    }
-    return medianAwal
   }
   
   // TEST CASES

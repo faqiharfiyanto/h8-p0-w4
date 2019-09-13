@@ -1,26 +1,27 @@
 function graduates (students) {
-  var result = {}
-  for(var i = 0; i < students.length; i++) {
-    if(students[i].score > 75) {
-      var keyObj = students[i].class
-      result[keyObj] = []
-      var objLulusan = {}
-      objLulusan.name = students[i].name
-      objLulusan.score = students[i].score
+  var result={}
+  for(var i=0; i<students.length; i++) {
+    if(students[i].score>75) {
+      var keyObj=students[i].class
+      result[keyObj]=[]
+      var objLulusan={
+      name: students[i].name,
+      score: students[i].score
+    }
       result[keyObj].push(objLulusan)
-      for(var j = 0; j < students.length; j++) {
-        if(i !== j && students[i].class === students[j].class) {
-          if(students[j].score > 75) {
-            var objLulusan = {}
-            objLulusan.name = students[j].name
-            objLulusan.score = students[j].score
-            result[keyObj].push(objLulusan)
+      for(var j=0; j<students.length; j++) {
+        if(i!=j && students[i].class==students[j].class) {
+          if(students[j].score>75) {
+            var objLulusanjuga={
+            name: students[j].name,
+            score: students[j].score
+            }
+            result[keyObj].push(objLulusanjuga)
           }
 
         }
       }
     }
-    // console.log(result)
   }
   return result
 }

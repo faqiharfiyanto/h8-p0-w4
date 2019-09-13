@@ -1,17 +1,16 @@
-function angkaPrima(angka) { 
-    var angkaArray = []
-    for( var i = 1; i <= angka; i++) {
-        if(angka % i === 0) {
-            angkaArray.push(angka)
+function angkaPrima(angka) {
+    var temp = []
+    for (var i=1; i<=angka; i++) {
+        if (angka%i==0) {
+            temp.push(i)
         }
     }
-    if(angkaArray.length <= 2) {
+    if (temp.length==2) {
         return true
-    }
-    else {
+    } else {
         return false
     }
-}
+  }
   
   // TEST CASES
   console.log(angkaPrima(3)); // true

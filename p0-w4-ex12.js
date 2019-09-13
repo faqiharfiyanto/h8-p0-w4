@@ -3,33 +3,30 @@ function countProfit(shoppers) {
                        ['Baju Zoro', 500000, 2],
                        ['Sweater Uniklooh', 175000, 1]
                      ];
-  
-    if(shoppers.length === 0) {
+    if(shoppers.length==0) {
         return []
     }
-    else {
-        var result = []
-        for(var i = 0; i < listBarang.length; i++) {
-            var profitObj = {}
-            var shoppersArr = []
-            var countTerjual = 0
-            var sisa = listBarang[i][2]
-            for(var j = 0; j < shoppers.length; j++) {
-                if(shoppers[j].product === listBarang[i][0] && shoppers[j].amount <= sisa) {
-                    countTerjual += shoppers[j].amount
-                    shoppersArr.push(shoppers[j].name)
-                    sisa -= shoppers[j].amount
-                }
+    var result=[]
+    for(var i=0; i<listBarang.length; i++) {
+        var profitObj={}
+        var shoppersArr=[]
+        var countTerjual=0
+        var sisa=listBarang[i][2]
+        for(var j=0; j<shoppers.length; j++) {
+           if(shoppers[j].product==listBarang[i][0] && shoppers[j].amount<=sisa) {
+                countTerjual+=shoppers[j].amount
+                shoppersArr.push(shoppers[j].name)
+                sisa-=shoppers[j].amount
             }
-            profitObj.product = listBarang[i][0]
-            profitObj.shoppers = shoppersArr
-            profitObj.leftOver = listBarang[i][2] - countTerjual
-            profitObj.totalProfit = listBarang[i][1] * countTerjual
-            result.push(profitObj)
         }
-        return result
+        profitObj.product=listBarang[i][0]
+        profitObj.shoppers=shoppersArr
+        profitObj.leftOver=listBarang[i][2]-countTerjual
+        profitObj.totalProfit=listBarang[i][1]*countTerjual
+        result.push(profitObj)
     }
-  }
+    return result
+}
   
   // TEST CASES
   console.log(countProfit([{name: 'Windi', product: 'Sepatu Stacattu', amount: 2}, {name: 'Vanessa', product: 'Sepatu Stacattu', amount: 3}, {name: 'Rani', product: 'Sweater Uniklooh', amount: 2}]));
