@@ -1,24 +1,22 @@
 function highestScore (students) {
-    var temp={}
+    var result={}
     for(var i=0; i<students.length; i++) {
       var keyObj=students[i].class
-      temp[keyObj] = {
+      result[keyObj] = {
       name: students[i].name,
       score: students[i].score
       }
       for(var j=0; j<students.length; j++) {
-        if(i!=j) {
-          if(students[i].class==students[j].class && students[i].score<students[j].score) {
-            var keyObj=students[j].class
-            temp[keyObj] = {
-            name: students[j].name,
-            score: students[j].score
-            }
+        if(i!=j && students[i].class==students[j].class && students[i].score<students[j].score) {
+          keyObj=students[j].class
+          result[keyObj] = {
+          name: students[j].name,
+          score: students[j].score
           }
         }
       }
     }
-    return temp
+    return result
   }
   
   // TEST CASE
